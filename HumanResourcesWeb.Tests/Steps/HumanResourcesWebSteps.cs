@@ -21,7 +21,7 @@ namespace HumanResourcesWeb.Tests.Steps
 
         private IWebDriver webDriver;
         private DbConnection connection;
-        private string webServerBaseAdress = "192.88.65.35:7777"; // "IP:Port" cannot be localhost here
+        private string webServerBaseAdress = "your_lan_ip:7777"; // "IP:Port" cannot be localhost here
         public HumanResourcesWebSteps()
         {
             Bootstrap(true);
