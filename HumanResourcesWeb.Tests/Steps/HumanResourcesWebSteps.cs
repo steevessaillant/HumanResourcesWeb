@@ -113,7 +113,7 @@ namespace HumanResourcesWeb.Tests.Steps
 
             if (waitSeconds.HasValue)
             {
-                IWait<IWebDriver> wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
+                IWait<IWebDriver> wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(waitSeconds.Value));
                 wait.Until(x => ((IJavaScriptExecutor)webDriver).ExecuteScript("return document.readyState").Equals("complete"));
             }
             
@@ -122,10 +122,10 @@ namespace HumanResourcesWeb.Tests.Steps
         private void FillEmailAndHometownFields()
         {
             var emailElement = webDriver.FindElement(By.Name("Email"));
-            emailElement.SendKeys("steevessaillant@gmail.com");
+            emailElement.SendKeys("unknown@gmail.com");
 
             var hometownElement = webDriver.FindElement(By.Name("Hometown"));
-            hometownElement.SendKeys("Paris");
+            hometownElement.SendKeys("Where-ever");
         }
 
         private void FillBothPasswordFields(string password, string confirmPassword)
